@@ -1,0 +1,39 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "build-cpp",
+        "type": "shell",
+        "command": "g++",
+        "args": ["-g", "test.cpp", "-o", "Test/test.exe"],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "presentation": {
+          "reveal": "always",
+          "panel": "new"
+        },
+        "options": {
+          "cwd": "Test"
+        }
+      },
+      {
+        "label": "run-cpp",
+        "type": "shell",
+        "command": "Test/test.exe",
+        "group": {
+          "kind": "test",
+          "isDefault": true
+        },
+        "presentation": {
+          "reveal": "always",
+          "panel": "new"
+        },
+        "options": {
+          "cwd": "Test"
+        }
+      }
+    ]
+  }
+  
