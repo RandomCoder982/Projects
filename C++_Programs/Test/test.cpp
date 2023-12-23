@@ -3,7 +3,7 @@ using namespace std;
 
 int main(){
     cout << "Starting" << endl;
-    for (int i = 0; i < 1*10^5; i++){
-        printf("%d\n", i);
+    for (int i = 1; i < 11; i++){
+    	cout << "Running " << i << endl;
     }
 }
