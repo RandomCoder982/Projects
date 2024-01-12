@@ -1,3 +1,2 @@
 #!/bin/bash
-
-echo $WHOAMI
+nmcli d wifi
