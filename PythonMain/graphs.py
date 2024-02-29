@@ -1,19 +1,36 @@
+from pyvis.network import Network
+import networkx as nx
+
+# nx_graph = nx.cycle_graph(10)
+# nx_graph.nodes[1]["title"] = "Number 1"
+
+# nt = Network()
+# nt.from_nx(nx_graph)
+# nt.show("nx.html")
+
 import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
+from datetime import datetime
 
-# Sample data
-x_values = [1, 2, 3, 4, 5]
-y_values = [2, 4, 6, 8, 10]
+# Sample data with dates
+dates = ['2024-01-01', '2024-01-02', '2024-01-03', '2024-01-04', '2024-01-05']
+values = [5, 7, 3, 8, 6]
 
-# Plotting the data
-plt.plot(x_values, y_values, label='Sample Line')
+# Convert string dates to datetime objects
+date_objs = [datetime.strptime(date, '%Y-%m-%d') for date in dates]
 
-# Adding labels and title
-plt.xlabel('X-axis Label')
-plt.ylabel('Y-axis Label')
-plt.title('Simple Line Graph')
+# Convert datetime objects to numeric values using date2num
+x = mdates.date2num(date_objs)
 
-# Adding a legend
-plt.legend()
+# Create figure and axis objects
+fig, ax = plt.subplots()
 
-# Display the plot
+# Create scatter plot using fig.scatter
+ax.scatter(x, values)
+
+# Format x-axis as dates
+ax.xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m-%d'))
+
+# Show the plot
 plt.show()
+
