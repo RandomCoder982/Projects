@@ -1,7 +1,6 @@
 import tkinter as tk
 
 getScreenSize = lambda: ((lambda root: (root.winfo_screenwidth(),root.winfo_screenheight(),root.destroy())[:-1])(__import__('tkinter').Tk()))
-print(getScreenSize())
 
 def changeText():
     change = entry.get()
